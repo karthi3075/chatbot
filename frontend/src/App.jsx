@@ -22,11 +22,11 @@ function App() {
         event.preventDefault()
         setChat((prev) => { return [...prev, { user: search }] })
         setLoading(true)
-        const response = await axios.post("http://localhost:3000/chat", { message: search })
+        const response = await axios.post("https://chatbot-picf.onrender.com/chat", { message: search })
         setLoading(false)
         setChat((prev) => { return [...prev, { ai: response.data.response }] })
         setSearch("")
-        const res = await axios.post("http://localhost:3000/store", { question: search, answer: response.data.response })
+        const res = await axios.post("https://chatbot-picf.onrender.com/store", { question: search, answer: response.data.response })
         if (res.data.status) {
             console.log("ok")
         } else {
