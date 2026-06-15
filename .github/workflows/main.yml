@@ -1,0 +1,15 @@
+- name: Install frontend
+  working-directory: ./client
+  run: npm install
+
+- name: Build frontend
+  working-directory: ./client
+  run: npm run build
+
+- name: Install backend
+  working-directory: ./server
+  run: npm install
+
+- name: Test backend
+  working-directory: ./server
+  run: npm test
