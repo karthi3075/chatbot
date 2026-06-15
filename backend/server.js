@@ -9,7 +9,7 @@ const app=express()
 
 connectDB()
 app.use(cors({
-    origin:"https://chatbot2005.vercel.app"
+    origin:"http://localhost:5173"
 }))
 const groq=new Groq({
     apiKey:process.env.api_key   
